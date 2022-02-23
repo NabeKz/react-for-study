@@ -8,6 +8,7 @@
     "dist": "sh ./dist.sh"
   },
   "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.4.26",
     "cross-env": "^7.0.3",
     "redoc-cli": "^0.13.7",
     "swagger-cli": "^4.0.4"
