@@ -6,7 +6,7 @@
   "scripts": {
     "frontend": "yarn --cwd frontend",
     "openapi": "yarn --cwd openapi",
-    "schema-generator": "sh ./schema-generator.sh"
+    "gen:schema": "sh ./schema-generator.sh"
   },
   "name": "react-sample",
   "version": "1.0.0",
