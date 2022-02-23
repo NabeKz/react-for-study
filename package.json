@@ -9,8 +9,7 @@
   "scripts": {
     "frontend": "yarn --cwd frontend",
     "openapi": "yarn --cwd openapi",
-    "openapi:dist": "yarn swagger-cli bundle openapi/index.yaml -o openapi/dist/index.yaml -t yaml",
-    "openapi:generate": "sh ./client-generator.sh"
+    "schema-generator": "sh ./schema-generator.sh"
   },
   "name": "react-sample",
   "version": "1.0.0",
