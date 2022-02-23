@@ -1,39 +1,18 @@
 openapi: 3.0.2
 info:
   title: Swagger Petstore - OpenAPI 3.0
-  description: "This is a sample Pet Store Server based on the OpenAPI 3.0 specification.\
-    \  You can find out more about\nSwagger at [http://swagger.io](http://swagger.io).\
-    \ In the third iteration of the pet store, we've switched to the design first\
-    \ approach!\nYou can now help us improve the API whether it's by making changes\
-    \ to the definition itself or to the code.\nThat way, with time, we can improve\
-    \ the API in general, and expose some of the new features in OAS3.\n\nSome useful\
-    \ links:\n- [The Pet Store repository](https://github.com/swagger-api/swagger-petstore)\n\
-    - [The source API definition for the Pet Store](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)"
-  termsOfService: http://swagger.io/terms/
-  contact:
-    email: apiteam@swagger.io
-  license:
-    name: Apache 2.0
-    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  description: ""
   version: 1.0.11
-externalDocs:
-  description: Find out more about Swagger
-  url: http://swagger.io
 servers:
 - url: /api/v3
 tags:
 - name: pet
   description: Everything about your Pets
-  externalDocs:
-    description: Find out more
-    url: http://swagger.io
 - name: store
   description: Access to Petstore orders
-  externalDocs:
-    description: Find out more about our store
-    url: http://swagger.io
 - name: user
   description: Operations about user
+
 paths:
   /pet:
     put:
@@ -44,24 +23,15 @@ paths:
       operationId: updatePet
       requestBody:
         description: Update an existent pet in the store
+        required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Pet'
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/Pet'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Pet'
-        required: true
       responses:
         "200":
           description: Successful operation
           content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Pet'
             application/json:
               schema:
                 $ref: '#/components/schemas/Pet'
@@ -83,24 +53,15 @@ paths:
       operationId: addPet
       requestBody:
         description: Create a new pet in the store
+        required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/Pet'
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/Pet'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Pet'
-        required: true
       responses:
         "200":
           description: Successful operation
           content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Pet'
             application/json:
               schema:
                 $ref: '#/components/schemas/Pet'
@@ -134,11 +95,6 @@ paths:
         "200":
           description: successful operation
           content:
-            application/xml:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Pet'
             application/json:
               schema:
                 type: array
@@ -172,11 +128,6 @@ paths:
         "200":
           description: successful operation
           content:
-            application/xml:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Pet'
             application/json:
               schema:
                 type: array
@@ -207,9 +158,6 @@ paths:
         "200":
           description: successful operation
           content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Pet'
             application/json:
               schema:
                 $ref: '#/components/schemas/Pet'
@@ -349,12 +297,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/Order'
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/Order'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Order'
       responses:
         "200":
           description: successful operation
@@ -384,9 +326,6 @@ paths:
         "200":
           description: successful operation
           content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/Order'
             application/json:
               schema:
                 $ref: '#/components/schemas/Order'
@@ -434,9 +373,6 @@ paths:
         "200":
           description: Successful operation
           content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/User'
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
@@ -514,9 +450,6 @@ paths:
         "200":
           description: successful operation
           content:
-            application/xml:
-              schema:
-                $ref: '#/components/schemas/User'
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
@@ -541,12 +474,6 @@ paths:
         description: Update an existent user in the store
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/User'
-          application/xml:
-            schema:
-              $ref: '#/components/schemas/User'
-          application/x-www-form-urlencoded:
             schema:
               $ref: '#/components/schemas/User'
       responses:
@@ -593,9 +520,6 @@ components:
       description: Pet object that needs to be added to the store
       content:
         application/json:
-          schema:
-            $ref: '#/components/schemas/Pet'
-        application/xml:
           schema:
             $ref: '#/components/schemas/Pet'
     UserArray:
