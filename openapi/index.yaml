@@ -14,6 +14,17 @@ tags:
   description: Operations about user
 
 paths:
+  /test:
+    get:
+      description: ""
+      responses:
+        200:
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: "./components/schemas/pet.yaml"
+
   /pet:
     $ref: "./paths/pet/index.yaml"
   /pet/findByStatus:

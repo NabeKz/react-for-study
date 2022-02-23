@@ -7,10 +7,12 @@
     "merge": "swagger-cli bundle -t yaml index.yaml",
     "redoc": "redoc-cli bundle index.yaml",
     "dist:yaml": "yarn merge -o dist/index.yaml",
-    "dist:html": "yarn redoc -o dist/index.html"
+    "dist:html": "yarn redoc -o dist/index.html",
+    "mock": "yarn dist:yaml && yarn prism mock dist/index.yaml & node mock-watch.js"
   },
   "devDependencies": {
-    "@openapitools/openapi-generator-cli": "^2.4.26",
+    "@stoplight/prism-cli": "^4.8.0",
+    "chokidar": "^3.5.3",
     "cross-env": "^7.0.3",
     "redoc-cli": "^0.13.7",
     "swagger-cli": "^4.0.4"
