@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "merge": "swagger-cli bundle index.yaml",
-    "redoc": "redoc-cli bundle",
-    "dist": "sh ./dist.sh"
+    "premerge": "swagger-cli validate index.yaml",
+    "merge": "swagger-cli bundle -t yaml index.yaml",
+    "redoc": "redoc-cli bundle index.yaml",
+    "dist:yaml": "yarn merge -o dist/index.yaml",
+    "dist:html": "yarn redoc -o dist/index.html"
   },
   "devDependencies": {
     "@openapitools/openapi-generator-cli": "^2.4.26",

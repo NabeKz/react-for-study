@@ -9,7 +9,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../components/user.yaml'
+          $ref: '../../components/user.yaml'
 
   responses:
     default:
@@ -17,4 +17,4 @@ post:
       content:
         application/json:
           schema:
-            $ref: '../components/user.yaml'
+            $ref: '../../components/user.yaml'

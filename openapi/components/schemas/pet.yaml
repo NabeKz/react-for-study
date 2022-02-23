@@ -8,21 +8,19 @@ properties:
     type: string
     example: doggie
   category:
-    $ref: '../components/category.yaml'
+    $ref: './category.yaml'
   photoUrls:
     type: array
     xml:
       wrapped: true
     items:
       type: string
-      xml:
-        name: photoUrl
   tags:
     type: array
     xml:
       wrapped: true
     items:
-      $ref: '../components/tag.yaml'
+      $ref: './tag.yaml'
   status:
     type: string
     description: pet status in the store
