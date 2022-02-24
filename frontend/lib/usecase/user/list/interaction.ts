@@ -1,6 +1,7 @@
 import { di } from "@/di_container";
-import { UserDto } from "./dto/dto";
-import { UserQueryService } from "./query-service/user-query-service";
+import { UserQueryService } from "../query-service";
+import { UserDto } from "./dto";
+
 
 export class UserFetchListInteraction {
   private list: UserDto[] = [];

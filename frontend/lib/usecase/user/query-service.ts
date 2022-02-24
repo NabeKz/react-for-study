@@ -1,4 +1,4 @@
-import { UserDto } from "../dto/dto";
+import { UserDto } from "./list/dto";
 
 export interface UserQueryService {
   fetchList(): Promise<UserDto[]>

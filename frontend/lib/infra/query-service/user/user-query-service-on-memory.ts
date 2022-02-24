@@ -1,5 +1,5 @@
-import { UserDto } from "@/usecase/user/dto/dto";
-import { UserQueryService } from "@/usecase/user/query-service/user-query-service";
+import { UserDto } from "@/usecase/user/list/dto";
+import { UserQueryService } from "@/usecase/user/query-service";
 
 export class UserQueryServiceOnMemory implements UserQueryService {
   async fetchList(): Promise<UserDto[]> {

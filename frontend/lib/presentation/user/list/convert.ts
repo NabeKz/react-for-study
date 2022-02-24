@@ -1,4 +1,4 @@
-import { UserDto } from "@/usecase/user/dto/dto";
+import { UserDto } from "@/usecase/user/list/dto";
 
 export type UserItems = {
   key: number;
