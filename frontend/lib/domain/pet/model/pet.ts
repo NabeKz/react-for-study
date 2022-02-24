@@ -29,4 +29,25 @@ export class Pet {
   }): Pet {
     return new Pet(id, name, category, photoUrls, tags, status);
   }
+
+  toAvailable() {
+    return Pet.valueOf({
+      ...this,
+      status: PetStatus.available
+    })
+  }
+
+  toPending() {
+    return Pet.valueOf({
+      ...this,
+      status: PetStatus.pending
+    })
+  }
+
+  toSold() {
+    return Pet.valueOf({
+      ...this,
+      status: PetStatus.sold
+    })
+  }
 }
