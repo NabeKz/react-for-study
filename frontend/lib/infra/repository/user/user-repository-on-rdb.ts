@@ -2,7 +2,6 @@ import { UserRepository } from "@/domain/user/repository";
 import { User } from "@/domain/user/user";
 import { client } from "@/infra/client";
 import { toJson, UserResponse } from "./response/user-response";
-import { paths } from "@/infra/schemas";
 
 export class UserRepositoryOnRdb implements UserRepository {
   private resource = "/user"

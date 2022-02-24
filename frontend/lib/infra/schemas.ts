@@ -175,20 +175,11 @@ export interface components {
       message?: string;
     };
   };
-  responses: {
-    /** OK */
-    UserResponse: {
-      content: {
-        "application/json": components["schemas"]["User"];
-      };
-    };
-  };
   requestBodies: {
     /** Pet object that needs to be added to the store */
     Pet: {
       content: {
         "application/json": components["schemas"]["Pet"];
-        "application/xml": components["schemas"]["Pet"];
       };
     };
     /** List of user object */
@@ -207,7 +198,6 @@ export interface operations {
       /** Successful operation */
       200: {
         content: {
-          "application/xml": components["schemas"]["Pet"];
           "application/json": components["schemas"]["Pet"];
         };
       };
@@ -222,8 +212,6 @@ export interface operations {
     requestBody: {
       content: {
         "application/json": components["schemas"]["Pet"];
-        "application/xml": components["schemas"]["Pet"];
-        "application/x-www-form-urlencoded": components["schemas"]["Pet"];
       };
     };
   };
@@ -233,7 +221,6 @@ export interface operations {
       /** Successful operation */
       200: {
         content: {
-          "application/xml": components["schemas"]["Pet"];
           "application/json": components["schemas"]["Pet"];
         };
       };
@@ -244,8 +231,6 @@ export interface operations {
     requestBody: {
       content: {
         "application/json": components["schemas"]["Pet"];
-        "application/xml": components["schemas"]["Pet"];
-        "application/x-www-form-urlencoded": components["schemas"]["Pet"];
       };
     };
   };
@@ -261,7 +246,6 @@ export interface operations {
       /** successful operation */
       200: {
         content: {
-          "application/xml": components["schemas"]["Pet"][];
           "application/json": components["schemas"]["Pet"][];
         };
       };
@@ -281,7 +265,6 @@ export interface operations {
       /** successful operation */
       200: {
         content: {
-          "application/xml": components["schemas"]["Pet"][];
           "application/json": components["schemas"]["Pet"][];
         };
       };
@@ -301,7 +284,6 @@ export interface operations {
       /** successful operation */
       200: {
         content: {
-          "application/xml": components["schemas"]["Pet"];
           "application/json": components["schemas"]["Pet"];
         };
       };
@@ -395,8 +377,6 @@ export interface operations {
     requestBody: {
       content: {
         "application/json": components["schemas"]["Order"];
-        "application/xml": components["schemas"]["Order"];
-        "application/x-www-form-urlencoded": components["schemas"]["Order"];
       };
     };
   };
@@ -412,7 +392,6 @@ export interface operations {
       /** successful operation */
       200: {
         content: {
-          "application/xml": components["schemas"]["Order"];
           "application/json": components["schemas"]["Order"];
         };
       };
@@ -440,14 +419,17 @@ export interface operations {
   /** This can only be done by the logged in user. */
   createUser: {
     responses: {
-      default: components["responses"]["UserResponse"];
+      /** successful operation */
+      default: {
+        content: {
+          "application/json": components["schemas"]["User"];
+        };
+      };
     };
     /** Created user object */
     requestBody: {
       content: {
         "application/json": components["schemas"]["User"];
-        "application/xml": components["schemas"]["User"];
-        "application/x-www-form-urlencoded": components["schemas"]["User"];
       };
     };
   };
@@ -457,7 +439,6 @@ export interface operations {
       /** Successful operation */
       200: {
         content: {
-          "application/xml": components["schemas"]["User"];
           "application/json": components["schemas"]["User"];
         };
       };
@@ -515,7 +496,6 @@ export interface operations {
       /** successful operation */
       200: {
         content: {
-          "application/xml": components["schemas"]["User"];
           "application/json": components["schemas"]["User"];
         };
       };
@@ -541,8 +521,6 @@ export interface operations {
     requestBody: {
       content: {
         "application/json": components["schemas"]["User"];
-        "application/xml": components["schemas"]["User"];
-        "application/x-www-form-urlencoded": components["schemas"]["User"];
       };
     };
   };
