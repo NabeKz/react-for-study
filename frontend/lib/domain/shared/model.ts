@@ -1,11 +1,4 @@
 // Needed for all mixins
-export abstract class Model {
-  readonly id: number;
-  protected constructor({ id }: { id: number }) {
-    this.id = id;
-  }
-}
-
 type Constructor<T = {}> = new (...args: any[]) => T;
 
 ////////////////////
