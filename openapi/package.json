@@ -8,7 +8,8 @@
     "redoc": "redoc-cli bundle index.yaml",
     "dist:yaml": "yarn merge -o dist/index.yaml",
     "dist:html": "yarn redoc -o dist/index.html",
-    "mock": "yarn dist:yaml && yarn prism mock dist/index.yaml & node mock-watch.js"
+    "premock": "yarn dist:yaml",
+    "mock": "yarn prism mock dist/index.yaml & node mock-watch.js"
   },
   "devDependencies": {
     "@stoplight/prism-cli": "^4.8.0",

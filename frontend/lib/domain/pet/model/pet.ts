@@ -27,6 +27,12 @@ export class Pet {
     tags: Tag[];
     status: PetStatus;
   }): Pet {
+    if (id < 1) {
+      throw Error(`不正な値です: id ${id}`)
+    }
+    if (Object.values(PetStatus).includes(status)) {
+      throw Error(`不正な値です: status ${status}`)
+    }
     return new Pet(id, name, category, photoUrls, tags, status);
   }
 

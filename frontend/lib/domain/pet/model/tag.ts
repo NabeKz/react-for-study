@@ -11,6 +11,9 @@ export class Tag {
     id: number,
     name: string
   }): Tag {
+    if (id < 1) {
+      throw Error(`idは1以上の数値を指定してください, id: ${id}`)
+    }
     return new Tag(
       id,
       name

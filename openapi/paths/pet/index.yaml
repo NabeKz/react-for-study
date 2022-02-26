@@ -28,6 +28,7 @@ put:
   - petstore_auth:
     - write:pets
     - read:pets
+
 post:
   tags:
   - pet
