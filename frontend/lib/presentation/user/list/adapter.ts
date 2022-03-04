@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { UserFetchListInteraction } from "@/usecase/user/fetchListUsecase";
 import { convert } from "./convert";
 import { handleRequest } from "@/presentation/shared/handler";
+import { UserFetchListInteraction } from "@/usecase/user/list/interaction";
 
 const interaction = UserFetchListInteraction.create();
 export const UserListAdapter = () => {

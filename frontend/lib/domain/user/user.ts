@@ -1,6 +1,4 @@
-import { Model } from "../shared/model";
-
-export class User extends Model {
+export class User {
   private constructor(
     readonly id: number,
     readonly username: string,
@@ -10,9 +8,7 @@ export class User extends Model {
     readonly password: string,
     readonly phone: string,
     readonly userStatus: number
-  ) {
-    super({ id: 0 });
-  }
+  ) {}
 
   static valueOf({
     id,

@@ -7,5 +7,14 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }
-  }
+  },
+  "ignorePatterns": ["*.config.js"],
+  "overrides": [
+    {
+      "files": [
+        "**/__tests__/**/*.ts?(x)",
+        "**/*.spec.ts?(x)"
+      ]
+    }
+  ]
 }
