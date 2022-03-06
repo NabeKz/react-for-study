@@ -1,23 +1,15 @@
-import Form from "@/presentation/shared/component/form";
-import Input, { InputProps } from "@/presentation/shared/component/input";
 import { Presentation } from "@/presentation/user/create";
+import Form from "pages/__components__/form/form";
+import Input from "pages/__components__/form/input";
 
 const App = () => {
-  const { onSubmit, register, errors } = Presentation();
-
-  const example = InputProps({
-    placeholder: "test",
-    register: register("example"),
-  });
-
-  const exampleRequired = InputProps({
-    register: register("exampleRequired", { required: true }),
-  });
+  const { onSubmit, validator, errors } = Presentation();
+  const { example, exampleRequired } = validator;
 
   return (
     <Form onSubmit={onSubmit()}>
-      <Input {...example} />
-      <Input {...exampleRequired} />
+      <Input {...{ register: example }} />
+      <Input {...{ register: exampleRequired }} />
       {errors.exampleRequired && <span>This field is required</span>}
       <Input {...{ type: "submit" }} />
     </Form>

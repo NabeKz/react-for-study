@@ -1,13 +1,12 @@
-import { BaseSyntheticEvent, FormEvent } from "react"
 import { FieldErrors } from "react-hook-form"
 
 type Props = {
-  onSubmit: (e?: BaseSyntheticEvent<object, any, any> | undefined) => Promise<void>
+  onSubmit: (e?: React.BaseSyntheticEvent<object, any, any> | undefined) => Promise<void>
   children: JSX.Element[] | FieldErrors
 }
 
 const Form = (props: Props) => {
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     props.onSubmit()
     console.log("submit!")

@@ -1,4 +1,3 @@
-import { di } from "@/di_container";
 import { UserRepository } from "@/domain/user/repository";
 import { UserCreateDto } from "./dto";
 
@@ -7,7 +6,7 @@ export class UserCreateInteraction {
     private repository: UserRepository
   ) {}
 
-  static crate(repository = di.repository.user): UserCreateInteraction {
+  static crate(repository: UserRepository): UserCreateInteraction {
     return new UserCreateInteraction(repository)
   }
 

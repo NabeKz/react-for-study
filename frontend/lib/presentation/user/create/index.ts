@@ -1,23 +1,28 @@
-import { useForm } from "react-hook-form"
-import { yupResolver } from '@hookform/resolvers/yup';
-import { object, number, string, InferType } from 'yup';
+import { Path, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { form, UserCreateForm } from "./form";
+import { UserCreateInteraction } from "@/usecase/user/create/interaction";
+import { di } from "@/di_container";
 
-const schema = object({
-  name: string().defined(),
-  age: number().optional(),
-});
-export type Inputs = InferType<typeof schema>
-
+const interaction = UserCreateInteraction.crate(di.repository.user);
 export const Presentation = () => {
-  const { register, handleSubmit, formState } = useForm<Inputs>({
-    resolver: yupResolver(schema)
+  const { register, handleSubmit, formState } = useForm<UserCreateForm>({
+    resolver: zodResolver(form),
+  });
+  const onSubmit = () => handleSubmit(submit);
+  const submit = () => console.log("data");
+  const fn = (key: Path<UserCreateForm>) => ({
+    ...register(key)
   })
-  const onSubmit = () => handleSubmit(submit)
-  const submit = (data: Inputs) => console.log(data)
-  
+
+  const validator = {
+    example: register("example"),
+    exampleRequired: fn("exampleRequired"),
+  };
+
   return {
     onSubmit,
-    register,
-    errors: formState.errors
-  }
-}
+    validator,
+    errors: formState.errors,
+  };
+};
