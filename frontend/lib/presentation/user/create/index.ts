@@ -3,6 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { form, UserCreateForm } from "./form";
 import { UserCreateInteraction } from "@/usecase/user/create/interaction";
 import { di } from "@/di_container";
+import { validationRegister } from "@/presentation/shared/validator";
 
 const interaction = UserCreateInteraction.crate(di.repository.user);
 export const Presentation = () => {
@@ -11,13 +12,10 @@ export const Presentation = () => {
   });
   const onSubmit = () => handleSubmit(submit);
   const submit = () => console.log("data");
-  const fn = (key: Path<UserCreateForm>) => ({
-    ...register(key)
-  })
-
+  
   const validator = {
-    example: register("example"),
-    exampleRequired: fn("exampleRequired"),
+    example: validationRegister("example", register),
+    exampleRequired: validationRegister("exampleRequired", register),
   };
 
   return {
