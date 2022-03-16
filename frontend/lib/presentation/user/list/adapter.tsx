@@ -3,8 +3,8 @@ import { convert } from "./convert";
 import { handleRequest } from "@/presentation/shared/handler";
 import { UserFetchListInteraction } from "@/usecase/user/list/interaction";
 
+const interaction = UserFetchListInteraction.create();
 export const UserListAdapter = () => {
-  const interaction = useRef(UserFetchListInteraction.create()).current;
   const toResponse = () => convert(interaction.toDto())
   const [state, dispatch] = useState(toResponse());
   
