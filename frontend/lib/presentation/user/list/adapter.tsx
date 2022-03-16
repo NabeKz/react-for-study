@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { convert } from "./convert";
 import { handleRequest } from "@/presentation/shared/handler";
 import { UserFetchListInteraction } from "@/usecase/user/list/interaction";
 
-const interaction = UserFetchListInteraction.create();
 export const UserListAdapter = () => {
+  const interaction = useRef(UserFetchListInteraction.create()).current;
   const toResponse = () => convert(interaction.toDto())
   const [state, dispatch] = useState(toResponse());
   
@@ -13,7 +13,7 @@ export const UserListAdapter = () => {
       () => interaction.initialize(),
       () => dispatch(toResponse())
     )
-  }, [])
+  })
 
   return {
     state,
