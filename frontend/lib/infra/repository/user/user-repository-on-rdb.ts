@@ -1,18 +1,18 @@
 import { UserRepository } from "@/domain/user/repository";
 import { User } from "@/domain/user/user";
-import { client } from "@/infra/client";
+import { client, endpoints } from "@/infra/client";
+
 import { toJson, UserResponse } from "./response/user-response";
 
 export class UserRepositoryOnRdb implements UserRepository {
-  private resource = "/user"
-
   async fetch(): Promise<User> {
-    const { data } = await client.get<UserResponse>(this.resource)
-    
-    return toJson(data)
+    const url = endpoints("/pet")
+    const { data } = await client.get<UserResponse>(url);
+
+    return toJson(data);
   }
 
   async save(user: User): Promise<void> {
-    throw Error("not implements")
+    throw Error("not implements");
   }
 }

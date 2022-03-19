@@ -6,6 +6,6 @@ const client = axios.create({
   timeout: 60 * 1000,
 });
 
-const endpoints = (path: keyof paths) => path
+const endpoints = (path: keyof paths) => path;
 
 export { client, endpoints };

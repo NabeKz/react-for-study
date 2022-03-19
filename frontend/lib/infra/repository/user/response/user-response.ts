@@ -3,7 +3,7 @@ import { components } from "@/infra/schemas";
 
 export type UserResponse = components["schemas"]["User"]
 
-export const toJson = (response: UserResponse): User => {
+export const toJson = (response: components["schemas"]["User"]): User => {
   return User.valueOf({
     id: 0,
     username: response.username || "",
