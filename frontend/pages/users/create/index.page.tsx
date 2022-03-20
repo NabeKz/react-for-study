@@ -7,9 +7,9 @@ const App = () => {
 
   return (
     <Form onSubmit={onSubmit()}>
-      <Input {...validator.emailRaw } />
-      <Input {...validator.emailConfirm } />
-      {validator.emailConfirm.errors && <span>This field is required</span>}
+      email: <Input {...validator.emailRaw } /><br />
+      confirm: <Input {...validator.emailConfirm } />
+      {validator.emailRaw.errors && <span>{validator.emailRaw.errors}</span>}
       <Input {...{ type: "submit" }} />
     </Form>
   );

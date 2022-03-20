@@ -11,11 +11,11 @@ export type UserCreateForm = {
 export const form = z.object<toZod<UserCreateForm>>({
   email: z
     .object({
-      raw: z.string(),
+      raw: z.string().nonempty(),
       confirm: z.string().nonempty(),
     })
     .refine(
       (value) => value.raw === value.confirm,
-      (_) => ({ message: "メールアドレス一致しません" })
+      (_) => ({ message: "メールアドレス一致しません"})
     ),
 });

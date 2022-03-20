@@ -16,7 +16,7 @@ export const InputProps = ({
   defaultValue?: string;
   type?: string;
   placeholder?: string;
-  register?: UseFormRegisterReturn;
+  register: UseFormRegisterReturn;
 }): Props => {
   return {
     defaultValue: defaultValue || "",
