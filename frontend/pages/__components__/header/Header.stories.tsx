@@ -1,17 +1,27 @@
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
+import { ComponentStoryObj } from "@storybook/react";
+import note from "./note.mdx"
 import Header from "./Header";
 
 export default {
   title: "Example2/Header2/sample",
   component: Header,
   parameters: {
-    // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
-    layout: "fullscreen",
+    docs: {
+      page: note
+    },
   },
-} as ComponentMeta<typeof Header>;
+} as ComponentStoryObj<typeof Header>;
 
-const Template: ComponentStory<typeof Header> = () => <Header />;
+const defaultArgs = {};
 
-export const Normal = Template.bind({});
-Normal.args = {}
+export const Normal = {
+  ...defaultArgs,
+  args: {},
+};
+
+export const Large = {
+  parameters: {
+  },
+  ...defaultArgs,
+  args: {},
+};

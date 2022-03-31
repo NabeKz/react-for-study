@@ -1,4 +1,3 @@
-import React from 'react';
 import { ComponentStoryObj } from '@storybook/react';
 
 import Page from './index.page';

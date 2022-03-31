@@ -18,9 +18,7 @@ interface ButtonProps {
    * Button contents
    */
   label: string;
-  /**
-   * Optional click handler
-   */
+  /** Optional click handler */
   onClick?: () => void;
 }
 
