@@ -16,6 +16,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/__components__/multiple-date-picker/multiple-date-picker.stories.mdx"],
   "exclude": ["node_modules", ]
 }

@@ -4,6 +4,7 @@ const path = require("path")
 module.exports = {
   "stories": [
     "../stories/**/*.stories.mdx",
+    "../pages/**/*.stories.mdx",
     "../pages/**/*.stories.@(ts|tsx)",
     "../stories/**/*.stories.@(js|jsx|ts|tsx)"
   ],

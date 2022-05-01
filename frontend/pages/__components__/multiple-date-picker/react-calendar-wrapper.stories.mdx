@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs';
+import { useState } from 'react';
+import { ReactCalendarWrapper } from "./react-calendar-wrapper";
+
+<Meta title="MDX/ReactWrapper" component={ReactCalendarWrapper} />
+
+# 概要
+親コンポーネントからfrom, toを受け取り
+callbackで新しいfrom, toを返却する
+
+<ArgsTable of={ReactCalendarWrapper} />
+
+## 動作サンプル
+
+export const Mock = () => {
+  const [state, setState] = useState({
+    from: new Date("2022-04-01"),
+    to: new Date("2022-6-01"),
+  })
+  const callback = (from, to) => setState({from, to})
+  return (
+    <ReactCalendarWrapper
+      from={state.from}
+      to={state.to}
+      amount={[1, 2, 3]}
+      callback={callback}
+    />
+  )
+}
+
+<Story name="sample">
+  <Mock />
+</Story>
